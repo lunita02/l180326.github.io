@@ -4,22 +4,15 @@
 
 <meta charset="UTF-8">
 
-<!-- IMPORTANTE PARA CELULAR -->
+<!-- ADAPTACIÓN CELULAR -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Feliz Cumpleaños</title>
-
 <link rel="stylesheet" href="estilos.css">
 
 <style>
 
-/* ---------- BASE ---------- */
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#fff0f6;
-}
+/* ----------- RESPONSIVE ----------- */
 
 .container{
 width:95%;
@@ -27,66 +20,37 @@ max-width:900px;
 margin:auto;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-margin-top:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-h1{
-text-align:center;
-}
-
-/* ---------- NAV ---------- */
-
-nav{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-padding:15px;
-}
-
-nav button{
-background:#ff4fa3;
-border:none;
-color:white;
-padding:10px 16px;
-border-radius:20px;
-font-size:15px;
-cursor:pointer;
-}
-
-/* ---------- RECUERDOS ---------- */
-
 .recuerdos{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
-.recuerdo img{
-width:100%;
-border-radius:10px;
-cursor:pointer;
-}
-
+.recuerdo img,
 .recuerdo video{
 width:100%;
 border-radius:10px;
 }
 
-/* ---------- VIDEO INICIO ---------- */
-
 .video-inicio video{
 width:100%;
 border-radius:10px;
-margin-top:15px;
 }
 
-/* ---------- BOTON MUSICA ---------- */
+nav{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+padding:10px;
+}
+
+nav button{
+padding:10px 15px;
+font-size:15px;
+}
+
+/* BOTON MUSICA */
 
 .boton-musica{
 position:fixed;
@@ -95,34 +59,14 @@ right:20px;
 background:#ff4fa3;
 color:white;
 border:none;
-padding:12px 16px;
-border-radius:30px;
+padding:12px 18px;
+border-radius:25px;
 cursor:pointer;
 font-size:14px;
 z-index:1000;
 }
 
-/* ---------- MODAL IMAGEN ---------- */
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-}
-
-.modal img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
-
-/* ---------- RESPONSIVE CELULAR ---------- */
+/* ----------- CELULAR ----------- */
 
 @media (max-width:700px){
 
@@ -141,14 +85,8 @@ font-size:16px;
 padding:12px;
 }
 
-.card{
-padding:18px;
-}
-
-.boton-musica{
-bottom:15px;
-right:15px;
-font-size:13px;
+.container{
+width:92%;
 }
 
 }
@@ -164,7 +102,7 @@ font-size:13px;
 
 <!-- Música -->
 <audio id="musica" loop>
-<source src="musica/cancion.mp3" type="audio/mpeg">
+  <source src="musica/cancion.mp3" type="audio/mpeg">
 </audio>
 
 <button class="boton-musica" onclick="toggleMusica()">🔊 Pausar música</button>
@@ -179,21 +117,18 @@ font-size:13px;
 
 <!-- INICIO -->
 <div id="inicio" class="seccion">
-
 <h1>🎀 ¡Feliz Cumpleaños Negrita! 🎀</h1>
-
 <div class="card">
 
 <p>Probablemente ya te haya mandado un texto inmenso para desearte tu cumpleaños perooo</p>
-
 <p>Aquí podras mirar y leer todo lo que me has hecho sentir en esta vuelta al sol que completaste</p>
 
 <button onclick="mostrarSeccion('recuerdos')">Entrar</button>
 
 <div class="video-inicio">
-
-<video controls class="video">
+<video controls>
 <source src="videos/video1.MOV" type="video/quicktime">
+Tu navegador no soporta el video.
 </video>
 
 <p class="mensaje-video">
@@ -207,127 +142,144 @@ Este video lo grabé mientras hacía la pagina jajaja, son unas palabras de aper
 
 <!-- RECUERDOS -->
 <div id="recuerdos" class="seccion" style="display:none;">
-
 <h1>📸 Nuestros Recuerdos</h1>
 
 <div class="card recuerdos">
 
-<!-- TODOS TUS RECUERDOS EXACTAMENTE IGUAL -->
-
 <div class="recuerdo">
 <img src="imagenes/foto1.jpg" onclick="ampliarImagen(this.src)">
-<p>Esta imagen no deberia ni explicar porque es tan especial...</p>
+<p>Esta imagen no deberia ni explicar porque es tan especial, fue exactamente hace un año
+    quien lo iba a creer que esos dos niños de ahi iban a terminar tan enamorados y no dejar las cosas como algo pasajero.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto2.jpg" onclick="ampliarImagen(this.src)">
-<p>Aqui empieza a contar...</p>
+<p>Aqui empieza a contar, fue la primer foto que me atrevi a tomar, tras de que se me ve la cara toda chistosita
+    tú ni te ves, pero eres tú, lo juro.
+</p>
 </div>
 
 <div class="recuerdo">
-<video controls class="video">
+<video controls>
 <source src="videos/video2.mp4" type="video/mp4">
+Tu navegador no soporta video.
 </video>
-<p>Este fue el primer video que grabamos...</p>
+<p>Este fue el primer video que grabamos donde nos vemos los dos, la verdad es tan hermoso ver como sonries y como nos ibamos ilusionando
+    cada vez más.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto3.jpg" onclick="ampliarImagen(this.src)">
-<p>Aqui fue cuando de la nada saliste...</p>
+<p>Aqui fue cuando de la nada saliste con que nos fueramos a esa finca con tu mamá, otra vez yo tomando fotos medio "escondidas" porque me daba pena,
+    sin embargo ese día nos abrazamosss nos dimos muchos picos frente a tu mamá y ya era como "Dios, tan recocha no somos", desde aqui me empezo a dar mucha confianza
+    volverme chicle.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto4.jpg" onclick="ampliarImagen(this.src)">
-<p>Empezaste a tomar fotos tú...</p>
+<p>Empezaste a tomar fotos tú, tambien un poquito escondidass pero era porque ambos estabamos nerviosos, aqui la verdad ya me gustabas un monton.</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto5.jpg" onclick="ampliarImagen(this.src)">
-<p>Ya nos tomabamos unas foticos...</p>
+<p>Ya nos tomabamos unas foticos no tan decentess pero ya se nota mucho la confianza, la verdad de los días más lindos contigo.</p>
 </div>
 
 <div class="recuerdo">
-<video controls class="video">
+<video controls>
 <source src="videos/video3.mp4" type="video/mp4">
+Tu navegador no soporta video.
 </video>
-<p>Este video es hermoso...</p>
+<p>Este video es hermoso, la verdad, cuando lo veo pienso en lo mucho que deseaba estar contigo, me sentía en las nubes, cada vez que te reías me daba una sensación
+    que es muy dificil de explicar (aun me pasa) pero en aquel entonces la empece a sentir.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto6.jpg" onclick="ampliarImagen(this.src)">
-<p>Quizás con esta daño un poco la estetica...</p>
+<p>Quizás con esta daño un poco la estetica, porque me veo ahi todo dormido jajaja, pero la páz y la tranquilidad que me das, de sentir que estas ahi al ladito asi sea sin 
+    decirnos ni una palabra.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto7.jpg" onclick="ampliarImagen(this.src)">
-<p>Estabamos recien dejaditos...</p>
+<p>Estabamos recien dejaditos pero recien volviditos, otra vez, me encanta arruncharme contigo, a veces me divierto un monton, a veces solo quiero dormir, a veces tin y a veces 
+    simplemente existimos juntos, pero siempre siempre siento un amor muy puro, hagamos lo que hagamos.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto8.jpg" onclick="ampliarImagen(this.src)">
-<p>Esta foto me encanta...</p>
+<p>Esta foto me encanta, mi negrita chiquita que se creció. Almenos de edad.</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto9.jpg" onclick="ampliarImagen(this.src)">
-<p>Estos eran los mejores parches...</p>
-</div>
+<p>Estos eran los mejores parches, era estar con mi persona favorita, la que mas me hace reir, la que mas amo, la que mas quisiera a mi lado, poder solo parchar, conversar y pasar tiempo de calidad
+    pero a la vez poder agarrarte y darte un beso porque me encantas, es lo mejor del mundo.
+</p>
 
+</div>
 <div class="recuerdo">
 <img src="imagenes/foto10.jpg" onclick="ampliarImagen(this.src)">
-<p>Pasamos un buen rato en la calle...</p>
+<p>Pasamos un buen rato en la calleee, hicimos un plansito espontaneo, comimos con tus papás y luego nos fuimos a tomar algo, la verdad ese día me sentia muy unido a ti, como si nos fueramos a casar al otro dia.</p>
 </div>
-
 <div class="recuerdo">
 <img src="imagenes/foto11.jpg" onclick="ampliarImagen(this.src)">
-<p>Esta foto tambien es de mis favoritas...</p>
+<p>Esta foto tambien es de mis favoritas, con solo verte esa carita, recordar esa sensación de tener frio, tener saco y estar siendo abrazado por ti, me hacia sentir como un niño chiquito muchas veces, abrazarte es de mis cosas favoritas en el mundo.</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto12.jpg" onclick="ampliarImagen(this.src)">
-<p>Este día que salimos con tus papás...</p>
-</div>
+<p>Este día que salimos con tus papás, me empece a sentir mucho más parte de la familia, la verdad me encantó mucho este día, nunca habia llegado hasta un punto así con nadie y la verdad agradezco que haya sido con alguien que realmente amé, amo y amaré.
+    Aparte hicimos una de tus cosas favoritas o de lo que mas te relaja, que es pintar, aunque no lo hagas mucho conocí esa sensación de páz, no te podré decir si fue por estar contigo, por pintar o por estar con el amor de mi vida, o por ambas.
+</p>
 
+</div>
 <div class="recuerdo">
 <img src="imagenes/foto13.jpg" onclick="ampliarImagen(this.src)">
-<p>Esta foto tambien me gusta muchisimooo...</p>
+<p>Esta foto tambien me gusta muchisimooo, me encanta cuando me das besitos, aparte asi con la pijama y eso, es como Dios mio, tan chimba seria enpijamarnos y dormir juntos toda la noche.</p>
 </div>
-
 <div class="recuerdo">
 <img src="imagenes/foto14.jpg" onclick="ampliarImagen(this.src)">
-<p>Ya para finalizar...</p>
+<p>Ya para finalizar, esta foto igual, es de mis favoritas porque aparte de que es la mujer que mas he amado sin ser de mi sangre, es porque este día en particular, me senti tan ansioso, sentí que iba a hacer
+    una de las cosas mas importantes de mi vida y me di cuenta que sí lo fue, aunque aqui ya llevabamos tiempo juntos, me di cuenta con el tiempo de que realmente eres la primer relación que tengo, algo real.
+    Así digas que no, estabas hermosa, te veías super preciosa con tus rosas, quisiera haber dado el triple, pero me esforcé para hacerlo de una forma linda, esa noche me acosté siendo el hombre más feliz del mundo.
+</p>
 </div>
 
 <div class="recuerdo">
 <img src="imagenes/foto15.jpg" onclick="ampliarImagen(this.src)">
-<p>Ya finalizando...</p>
-</div>
+<p>Ya finalizando, siempre quiero estar asi, como un chicle, abrazandote, dandote besitos, que me acaricies y decirte cuanto te amo, a veces quisiera vernos todos los días como lo haciamos aqui.
+    Y se que quizás faltaron más fotos, más videos, pero tenemos muchisimos, aparte me conoces, a veces me pongo bien cursi y si fuera por mi pongo los mensajes, las notas y hablaria de todas las veces que fui feliz contigo y no tomamos ni una foto.
+    Te amo. Siga al mensajito.
+</p>
 
+</div>
 </div>
 </div>
 
 <!-- MENSAJES -->
-
 <div id="mensajes" class="seccion" style="display:none;">
-
 <h1>💌 Mensaje</h1>
-
 <div class="card">
 
-<p>Se que te mandaré alguno muy parecido el 18 a las 12:00 a.m. pero este lo vas a tener aqui para leerlo cuando quieras.</p>
+<p>Se que te mandaré alguno muy parecido el 18 a las 12:00 a.m. pero este, lo vas a tener aqui, para leerlo cuando quieras.</p>
 
-<p>Lunita, amor, cielo, corazoncito, vida...</p>
+<p>Lunita, amor, cielo, corazoncito, vida. Hoy que cumples otra vuelta al sol, quiero desearte lo mejor...</p>
 
-<p>Aunque te conocí no se con cuantos años...</p>
+<p>Aunque te conocí no se con cuantos años y empezamos a hablar cuando tenias 16...</p>
 
-<p>Espero en este cumpleaños la pases bien...</p>
-
-</div>
-</div>
+<p>Espero en este cumpleaños la pases bien, quisiera estar ahi y darte un abrazo...</p>
 
 </div>
+</div>
 
-<!-- MODAL -->
+</div>
 
 <div id="modal" class="modal" onclick="cerrarImagen()">
 <img id="imgGrande">
@@ -340,20 +292,13 @@ Este video lo grabé mientras hacía la pagina jajaja, son unas palabras de aper
 const musica = document.getElementById("musica");
 const botonMusica = document.querySelector(".boton-musica");
 
-function iniciarMusica(){
-musica.play().catch(()=>{});
-}
+window.addEventListener("load",()=>{musica.play().catch(()=>{});});
 
-window.addEventListener("load", iniciarMusica);
-
-document.addEventListener("click", function(){
-if(musica.paused){
-musica.play().catch(()=>{});
-}
+document.addEventListener("click",()=>{
+if(musica.paused){musica.play().catch(()=>{});}
 },{once:true});
 
 function toggleMusica(){
-
 if(musica.paused){
 musica.play();
 botonMusica.innerText="🔊 Pausar música";
@@ -361,49 +306,16 @@ botonMusica.innerText="🔊 Pausar música";
 musica.pause();
 botonMusica.innerText="🎵 Reanudar música";
 }
-
 }
 
-const videos=document.querySelectorAll("video");
-
-videos.forEach(video=>{
-
-video.addEventListener("play",()=>{
-musica.pause();
-});
-
-video.addEventListener("ended",()=>{
-musica.play().catch(()=>{});
-});
-
+document.querySelectorAll("video").forEach(video=>{
+video.addEventListener("play",()=>musica.pause());
+video.addEventListener("ended",()=>musica.play().catch(()=>{}));
 });
 
 function mostrarSeccion(seccion){
-
-const secciones=document.querySelectorAll(".seccion");
-
-secciones.forEach(s=>{
-s.style.display="none";
-});
-
-document.getElementById(seccion).style.display="block";
-
-}
-
-function ampliarImagen(src){
-
-const modal=document.getElementById("modal");
-const img=document.getElementById("imgGrande");
-
-img.src=src;
-modal.style.display="flex";
-
-}
-
-function cerrarImagen(){
-
-document.getElementById("modal").style.display="none";
-
+document.querySelectorAll('.seccion').forEach(s=>s.style.display='none');
+document.getElementById(seccion).style.display='block';
 }
 
 </script>
